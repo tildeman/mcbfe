@@ -26,3 +26,43 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+
+.adu2{
+    width:200px;
+    height:200px;
+    border-radius: 0 100px;
+    background-color: #ffcc99;
+    transition:1s ease-in;
+}
+
+.adu2:hover{
+    transform: rotate(3600deg);
+}
+
+.adu3{
+    width:200px;
+    height:200px;
+    background-color: #dddd00;
+    position: relative;
+}
+
+.adu3 .nen:hover{
+    opacity: 1;
+}
+
+.adu3 .nen{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: #2222ff;
+    opacity: 0;
+    transition: 1s;
+}
+
+.adu4{
+    float: left;
+}
+
+.nenx{
+    background-color: #808080;
+}
