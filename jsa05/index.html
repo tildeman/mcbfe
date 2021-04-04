@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Di et a ko nam</title>
+	</head>
+	<body>
+		Ki: <input type="text" placeholder="ki" id="ki">
+		Va liu: <input type="text" placeholder="va liu" id="valiu">
+		<button id="at">Nhập</button>
+		<button id="rimup">Xóa</button>
+		<ul id="windostwelv">
+		</ul>
+		<script>
+			let btn=document.getElementById("at");
+			let ntb=document.getElementById("rimup");
+			btn.addEventListener('click',addItem);
+			ntb.addEventListener('click',removeItem);
+			function addItem(){
+				let key=document.getElementById("ki").value;
+				let value=document.getElementById("valiu").value;
+				localStorage.setItem(key,value);
+				render();
+			}
+			function removeItem(){
+				let key=document.getElementById("ki").value;
+				localStorage.removeItem(key);
+				document.getElementById("ki").value="";
+				render();
+			}
+			function render(){
+				let ul=document.getElementById("windostwelv");
+				ul.innerHTML="";
+				for (let i=0;i<localStorage.length;i++){
+					ul.innerHTML+='<li> Ki: '+localStorage.key(i)+' Va liu: '+localStorage.getItem(localStorage.key(i))+"</li>";
+				}
+				document.body.appendChild(ul);
+			}
+		</script>
+	</body>
+</html>
