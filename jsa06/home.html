@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Home</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<button id="logout">Đăng xuất</button>
+		
+		<script>
+			if (localStorage.getItem("isuser")===null){
+				window.location.href="./signin.html";
+			}
+			let p=document.createElement("p");
+			p.innerHTML+=localStorage.getItem("isuser");
+			document.body.appendChild(p);
+
+			let btnlogout=document.getElementById("logout");
+			btnlogout.addEventListener('click',logout);
+
+			function logout(){
+				localStorage.removeItem("isuser");
+			}
+		</script>
+	</body>
+</html>

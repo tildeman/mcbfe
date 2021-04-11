@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sign Up</title>
+	</head>
+	<body>
+		User: <input type="text" placeholder="User" id="user">
+		Pass: <input type="password" placeholder="Password" id="pass">
+		Name: <input type="text" placeholder="Name User" id="name">
+		<button id="signup">Đăng Ký</button>
+		<a href="./signin.html">Đăng nhập</a>
+
+		<script>
+			let userslist = ["root"];
+			let passlist = ["root"];
+			let namelist = ["root"];
+
+			if (localStorage.getItem("userslist")===null){
+				localStorage.setItem("userslist",JSON.stringify(userslist));
+			}
+			else{
+				userslist=JSON.parse(localStorage.getItem("userslist"));
+			}
+			if (localStorage.getItem("passlist")===null){
+				localStorage.setItem("passlist",JSON.stringify(passlist));
+			}
+			else{
+				passlist=JSON.parse(localStorage.getItem("passlist"));
+			}
+
+			if (localStorage.getItem("namelist")===null){
+				localStorage.setItem("namelist",JSON.stringify(namelist));
+			}
+			else{
+				namelist=JSON.parse(localStorage.getItem("namelist"));
+			}
+
+			let btnsignup=document.getElementById("signup");
+			btnsignup.addEventListener('click',signup);
+			function signup(){
+				let user=document.getElementById("user").value;
+				let pass=document.getElementById("pass").value;
+				let name=document.getElementById("name").value;
+
+				if (user===""||pass===""||name===""){
+					alert("mÀy cHếT");
+				}
+				else{
+					if (pass.length<6){
+						alert("mẬt kHẩU NhƯ CứT");
+						return;
+					}
+					for (let i=0;i<userslist.length;i++){
+						if (user===userslist[i]){
+							alert("mÀy nGu!1");
+							document.getElementById("user").value="";
+							return;
+						}
+					}
+					
+					userslist.push(user);
+					passlist.push(pass);
+					namelist.push(name);
+					
+					localStorage.setItem("userslist", JSON.stringify(userslist));
+					localStorage.setItem("passlist",JSON.stringify(passlist));
+					localStorage.setItem("namelist",JSON.stringify(namelist));
+
+					window.location.href="./signin.html";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sign In</title>
+	</head>
+	<body>
+		User: <input type="text" placeholder="User" id="user">
+		Pass: <input type="password" placeholder="Password" id="pass">
+		<button id="signin">Đăng Nhập</button>
+		<a href="./signup.html">Đăng Ký</a>
+
+		<script>
+			let userslist=["root"];
+			let passlist=["root"];
+			
+
+			if (localStorage.getItem("userslist")===null){
+				localStorage.setItem("userslist",JSON.stringify(userslist));
+			}
+			else{
+				userslist=JSON.parse(localStorage.getItem("userslist"));
+			}
+			if (localStorage.getItem("passlist")===null){
+				localStorage.setItem("passlist",JSON.stringify(passlist));
+			}
+			else{
+				passlist=JSON.parse(localStorage.getItem("passlist"));
+			}
+
+
+			let btnsignin=document.getElementById("signin");
+			btnsignin.addEventListener('click',signin);
+			function signin(){
+				
+				let user=document.getElementById("user").value;
+				let pass=document.getElementById("pass").value;
+
+				if (user===""||pass===""){
+					alert("mÀy cHếT");
+				}
+				else{
+					for (let i=0;i<userslist.length;i++){
+						if (user===userslist[i]&&pass===passlist[i]){
+							console.log("mÀy gẮt");
+							localStorage.setItem("isuser",userslist[i]);
+							return;
+						}
+					}
+					alert("mÀy nGu");
+				}
+			}
+		</script>
+	</body>
+</html>
