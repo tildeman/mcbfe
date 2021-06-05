@@ -1,0 +1,35 @@
+.fill{
+    background-image: linear-gradient(to bottom right,#dd2288,#cc1144);
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-repeat:no-repeat;
+}
+.mainbox{
+    position:absolute;
+    width:700px;
+    height:600px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background-image: url("./frame.png");
+}
+#curplayer{
+    position:absolute;
+    margin:10px auto;
+    color:white;
+    font-family: sans-serif;
+    font-size:40pt;
+    vertical-align: middle;
+}
+#win{
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    font-family: sans-serif;
+    font-size:40pt;
+    vertical-align: middle;
+}

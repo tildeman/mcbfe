@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Connect 4 thing</title>
+</head>
+<body>
+    <div class="fill">
+        <p id="curplayer">Current player: P1<img src="n1.png" style="height: 40px;"></p>
+        <p id="win">Connect 4</p>
+        <div class="mainbox">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 000px; top: 000px;" onclick="droppellet(0)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 100px; top: 000px;" onclick="droppellet(1)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 200px; top: 000px;" onclick="droppellet(2)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 300px; top: 000px;" onclick="droppellet(3)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 400px; top: 000px;" onclick="droppellet(4)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 500px; top: 000px;" onclick="droppellet(5)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 600px; top: 000px;" onclick="droppellet(6)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 000px; top: 100px;" onclick="droppellet(0)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 100px; top: 100px;" onclick="droppellet(1)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 200px; top: 100px;" onclick="droppellet(2)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 300px; top: 100px;" onclick="droppellet(3)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 400px; top: 100px;" onclick="droppellet(4)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 500px; top: 100px;" onclick="droppellet(5)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 600px; top: 100px;" onclick="droppellet(6)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 000px; top: 200px;" onclick="droppellet(0)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 100px; top: 200px;" onclick="droppellet(1)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 200px; top: 200px;" onclick="droppellet(2)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 300px; top: 200px;" onclick="droppellet(3)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 400px; top: 200px;" onclick="droppellet(4)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 500px; top: 200px;" onclick="droppellet(5)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 600px; top: 200px;" onclick="droppellet(6)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 000px; top: 300px;" onclick="droppellet(0)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 100px; top: 300px;" onclick="droppellet(1)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 200px; top: 300px;" onclick="droppellet(2)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 300px; top: 300px;" onclick="droppellet(3)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 400px; top: 300px;" onclick="droppellet(4)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 500px; top: 300px;" onclick="droppellet(5)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 600px; top: 300px;" onclick="droppellet(6)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 000px; top: 400px;" onclick="droppellet(0)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 100px; top: 400px;" onclick="droppellet(1)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 200px; top: 400px;" onclick="droppellet(2)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 300px; top: 400px;" onclick="droppellet(3)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 400px; top: 400px;" onclick="droppellet(4)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 500px; top: 400px;" onclick="droppellet(5)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 600px; top: 400px;" onclick="droppellet(6)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 000px; top: 500px;" onclick="droppellet(0)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 100px; top: 500px;" onclick="droppellet(1)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 200px; top: 500px;" onclick="droppellet(2)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 300px; top: 500px;" onclick="droppellet(3)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 400px; top: 500px;" onclick="droppellet(4)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 500px; top: 500px;" onclick="droppellet(5)">
+            <img src="n0.png" class="pellet" style="position: absolute; left: 600px; top: 500px;" onclick="droppellet(6)">
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
