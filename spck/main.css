@@ -33,3 +33,8 @@
     font-size:40pt;
     vertical-align: middle;
 }
+#restart_btn{
+    position:absolute;
+    right:0;
+    top:0;
+}
