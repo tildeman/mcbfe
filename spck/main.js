@@ -5,6 +5,7 @@ const diag_combinations=[[21,15,9,3],[28,22,16,10],[22,16,10,4],[35,29,23,17],[2
 						[0,8,16,24],[8,16,24,32],[16,24,32,40],[7,15,23,31],[15,23,31,39],[14,22,30,38]]
 var current_player=0;
 var game_active=1;
+var is_anim=0;
 function findpelletbycoords(row,col){
 	return pellet_array[row*7+col];
 }
@@ -15,15 +16,43 @@ function broadcast_win(m){
 	document.getElementById("win").innerHTML=m+" wins!";
 	game_active=0;
 }
+function reset_anim(){
+	let e=document.getElementsByClassName("pellet_anim");
+	for (let i=0;i<e.length;i++){
+		e[i].src="n0.png";
+		e[i].top="0";
+	}
+}
+function animate(row,col){
+	if (is_anim==0){
+		is_anim=1;
+		let e=document.getElementsByClassName("pellet_anim")[col];
+		let ecurpos=0,efinalpos=row*100;
+		e.src="n"+(current_player+1)+".png";
+		let eanim=setInterval(fb,1);
+		function fb(){
+			if (ecurpos>=efinalpos){
+				clearInterval(eanim);
+				findpelletbycoords(row,col).src="n"+(current_player+1)+".png";
+				current_player=(current_player+1)%2;
+				update_status();
+				reset_anim();
+				let w=check_4();
+				if (w) broadcast_win(w);
+				is_anim=0;
+			}
+			else{
+				ecurpos+=2;
+				e.style.top=ecurpos+"px";
+			}
+		}
+	}
+}
 function droppellet(col){
 	if (game_active){
 		for (let i=5;i>=0;i--){
 			if (findpelletbycoords(i,col).src.includes("n0.png")){
-				findpelletbycoords(i,col).src="n"+(current_player+1)+".png";
-				current_player=(current_player+1)%2;
-				update_status();
-				let w=check_4();
-				if (w) broadcast_win(w);
+				animate(i,col);
 				return;
 			}
 		}
